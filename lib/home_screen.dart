@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:fitness_tracker/mock_fitness_data.dart';
+
 import 'data_base_helper.dart';
 import 'notification_service.dart';
 import 'stat_container.dart';
@@ -6,17 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class MockFitnessData {
-  final int steps;
-  final double caloriesBurned;
-  final int heartRate;
 
-  MockFitnessData({
-    required this.steps,
-    required this.caloriesBurned,
-    required this.heartRate,
-  });
-}
 
 MockFitnessData generateMockData() {
   return MockFitnessData(
