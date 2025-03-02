@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:fitness_tracker/mock_fitness_data.dart';
 
-import 'data_base_helper.dart';
+import 'database_helper.dart';
 import 'notification_service.dart';
 import 'stat_container.dart';
 import 'package:flutter/material.dart';
@@ -77,10 +77,12 @@ class _FitnessTrackerHomePageState extends State<FitnessTrackerHomePage> {
       return;
     }
 
-    if (!await FlutterBluePlus.isOn) {
+    if (await FlutterBluePlus.adapterState.first != BluetoothAdapterState.on) {
+      // ignore: use_build_context_synchronously
       showSnackBar(context, "Bluetooth is not turned on. Turning it on...");
       await FlutterBluePlus.turnOn();
     } else {
+      // ignore: use_build_context_synchronously
       showSnackBar(context, "Bluetooth is already on.");
     }
   }
@@ -108,6 +110,7 @@ class _FitnessTrackerHomePageState extends State<FitnessTrackerHomePage> {
       // Simulate connecting to the mock device
       await connectToDevice(mockDevice);
     } catch (e) {
+      // ignore: use_build_context_synchronously
       showSnackBar(context, "Error during scan: $e");
     } finally {
       if (mounted) {
@@ -167,6 +170,7 @@ class _FitnessTrackerHomePageState extends State<FitnessTrackerHomePage> {
           setState(() => connectedDevice = null);
         }
       } catch (e) {
+        // ignore: use_build_context_synchronously
         showSnackBar(context, "Error disconnecting device: $e");
       }
     }

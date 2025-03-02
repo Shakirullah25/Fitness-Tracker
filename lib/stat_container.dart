@@ -13,11 +13,11 @@ Container buildStatContainter(
 }) {
   return Container(
     width: size.width,
-    margin: margin ?? EdgeInsets.only(top: 50),
+    margin: margin ?? const EdgeInsets.only(top: 50),
     decoration: BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(10),
-      boxShadow: [
+      boxShadow: const [
         BoxShadow(
           color: Colors.black12,
           blurRadius: 10,
@@ -36,10 +36,10 @@ Container buildStatContainter(
           size: 60,
           color: Colors.blue,
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.w600,
             color: Colors.black87,
@@ -49,7 +49,7 @@ Container buildStatContainter(
         const SizedBox(height: 10),
         Text(
           value,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 32,
             color: Colors.black54,
           ),

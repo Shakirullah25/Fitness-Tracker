@@ -33,7 +33,7 @@ class NotificationService {
   Future<void> _configureNotifications() async {
     const AndroidInitializationSettings androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
 
-    final InitializationSettings settings = InitializationSettings(
+    const InitializationSettings settings = InitializationSettings(
       android: androidSettings,
     );
 
@@ -48,14 +48,14 @@ class NotificationService {
     required tz.TZDateTime scheduledTime,
   }) async {
     try {
-      final androidDetails = const AndroidNotificationDetails(
+      const androidDetails = AndroidNotificationDetails(
         'fitness_tracker_channel',
         'Fitness Tracker Notifications',
         importance: Importance.max,
         priority: Priority.high,
       );
 
-      final platformDetails = NotificationDetails(
+      const platformDetails = NotificationDetails(
         android: androidDetails,
       );
 
